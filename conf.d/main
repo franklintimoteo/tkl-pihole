@@ -12,4 +12,4 @@ export PIHOLE_SKIP_OS_CHECK=true
 
 cp /usr/local/src/Pi-hole/automated\ install/basic-install.sh .
 chmod +x ./basic-install.sh
-bash -sex ./basic-install.sh --unattended
+bash -sex ./basic-install.sh --unattended || true
