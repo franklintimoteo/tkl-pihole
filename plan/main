@@ -1,0 +1,13 @@
+#include <turnkey/base>
+sudo
+idn2
+dns-root-data
+netcat-openbsd
+jq
+lighttpd
+php-common
+php-cgi
+php-sqlite3
+php-xml
+php-intl
+php-json
