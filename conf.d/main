@@ -1,15 +1,31 @@
 #!/bin/sh -ex
-echo "Instalando pihole..."
-export PIHOLE_INTERFACE=eth0
-export IPV4_ADDRESS=0.0.0.0
-export IPV6_ADDRESS=0:0:0:0:0:0
-export PIHOLE_DNS_1=8.8.8.8
-export QUERY_LOGGING=true
-export INSTALL_WEB_SERVER=true
-export INSTALL_WEB_INTERFACE=true
-export LIGHTTPD_ENABLED=true
-export PIHOLE_SKIP_OS_CHECK=true
 
-cp /usr/local/src/Pi-hole/automated\ install/basic-install.sh .
-chmod +x ./basic-install.sh
-bash -sex ./basic-install.sh --unattended || true
+SRC=/usr/local/src/Pi-hole
+
+git clone --depth 1 https://github.com/pi-hole/pi-hole.git $SRC
+
+echo "Instalando pihole..."
+
+PWORD=turnkey
+PASSWORD=$(echo -n $PWORD | sha256sum -z | sed "s| .*$||" \
+                          | sha256sum | sed "s| .*$||")
+mkdir /etc/pihole
+cat > /etc/pihole/setupVars.conf <<EOF
+WEBPASSWORD=$PASSWORD
+PIHOLE_INTERFACE=eth0
+IPV4_ADDRESS=0.0.0.0
+IPV6_ADDRESS=0:0:0:0:0:0
+PIHOLE_DNS_1=8.8.8.8
+QUERY_LOGGING=true
+INSTALL_WEB_SERVER=true
+INSTALL_WEB_INTERFACE=true
+LIGHTTPD_ENABLED=true
+PIHOLE_SKIP_OS_CHECK=true
+EOF
+
+cd $SRC/automated\ install/
+# workaround systemctl restart failing during build
+sed -i "/systemctl restart/s/$/|| true/" basic-install.sh
+bash -ex basic-install.sh --unattended
+# undo workaround
+git checkout basic-install.sh
