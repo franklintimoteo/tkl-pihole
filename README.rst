@@ -1,118 +1,46 @@
-TurnKey Core - Debian GNU/Linux with Batteries Included
-=======================================================
+Pi-hole - Network-wide ad blocking
+==================================
 
-TurnKey Core is the base operating system which all TurnKey GNU/Linux
-solutions share in common. It is commonly deployed standalone as a
-convenient starting point for custom system integrations. Benefits
-include automatic daily security updates, 1-click backup and restore, a
-web control panel, and preconfigured system monitoring with optional
-email alerts.
+`Pi-hole`_ is a DNS sinkhole that protects your devices from unwanted
+content without installing any client-side software.
 
-Features:
+This appliance includes all the standard features in `TurnKey Core`_,
+and on top of that:
 
-- **Base Operating System**: Debian GNU/Linux 9 (Stretch).
+- Pi-hole:
+    - **Easy-to-install**: our dialogs walk you through the simple
+    installation process in less than ten minutes
+    - **Resolute**: content is blocked in _non-browser locations_,
+    such as ad-laden mobile apps and smart TVs
+    - **Responsive**: seamlessly speeds up the feel of everyday browsing
+    by caching DNS queries
+    - **Lightweight**: runs smoothly with [minimal hardware and software
+    requirements](https://docs.pi-hole.net/main/prerequisites/)
+    - **Robust**: a command-line interface that is quality assured for
+    interoperability
+    - **Insightful**: a beautiful responsive Web Interface dashboard to view
+    and control your Pi-hole
+    - **Versatile**: can optionally function as a [DHCP server](https://discourse.pi-hole.net/t/how-do-i-use-pi-holes-built-in-dhcp-server-and-why-would-i-want-to/3026),
+    ensuring _all_ your devices are protected automatically
+    - **Scalable**: [capable of handling hundreds of millions of queries](https://pi-hole.net/2017/05/24/how-much-traffic-can-pi-hole-handle/)
+    when installed on server-grade hardware
+    - **Modern**: blocks ads over both IPv4 and IPv6
+    - **Free**: open source software that helps ensure _you_ are the sole
+    person in control of your privacy
 
-- **Build formats**: Deploys on bare metal, virtual machines (e.g.,
-  OpenStack, VMWare, VirtualBox, LXC, KVM, Xen) and in the cloud.
-   
-  - `ISO images`_: Generic installable Live CD. Installs anywhere.
-  - `Virtual Machine images`_: Optimized for virtualized hardware,
-    pre-installed and ready to run.
-  - Amazon Machine Image (AMI): Best launched via the `TurnKey
-    Hub`_.
-
-- **Free as in speech**: `free software`_ with `full source code`_ and a
-  `powerful build system`_. Free of hidden backdoors, free from
-  restrictive licensing and free to learn from, modify and distribute.
-
-- **Secure and easy to maintain**: `Auto-updated daily`_ with latest
-  Debian security patches. Optional monitoring and email notification of
-  `system alerts`_.
-
-- **1-click backup and restore** (`TKLBAM`_): smart backup and data
-  migration software saves changes to files, databases and package
-  management to encrypted storage which a system can be automatically
-  restored from.
-  
-- **Dynamic DNS** (`HubDNS`_): Associates your IP with a custom domain
-  or the free \*.tklapp.com domain.
-
-- **Logical Volume Management** (`LVM`_): Instead of installing to a
-  fixed size partition, a Logical Volume is first created by default,
-  and this may later be expanded, even across multiple physical devices.
-
-- **AJAX web shell (Web CLI)** (`shellinabox`_) - secure command line access from
-  any web browser.
-
-- **Web management interface (WebUI)** (`Webmin`_):
-   
-  - Listens on port 12321 (uses SSL).
-  - Modern responsive theme: 'Authentic'.
-  - Network modules:
-     
-    - Firewall configuration (with example configuration).
-    - Network configuration.
-
-  -  System modules:
-     
-     - Backup and migration (TKLBAM).
-     - Configure time, date and timezone.
-     - Configure users and groups.
-     - Manage software packages.
-     - Change passwords.
-     - System logs.
-
-  -  Tool modules:
-     
-     - Text editor.
-     - Shell commands (note not proper interactive shell).
-     - Simple file upload/download.
-     - File manager (HTML5).
-     - Custom commands.
-
-  -  Hardware modules:
-     
-     - Partitions on local disks.
-     - Logical volume management.
-
-- **Simple configuration console (cli)** (`confconsole`_):
-   
-  - Displays basic usage information.
-  - Configure networking.
-  - Let's Encrypt SSL/TLS certificates.
-  - Mail SMTP relay setup.
-  - Proxy settings.
-  - Region and timezone.
-  - Other global system settings.
-
-- **First boot initialization** (`inithooks`_):
-   
-  - Prompt user for passwords.
-  - Regenerates SSL and SSH cryptographic keys.
-  - Installs latest security updates, unless user chooses to defer this
-    for later.
-
-- **Command line power tools**
-   
-  - Smart, programmable bash shell completion: helps you get more done
-    with fewer keystrokes.
-  - Support for $HOME/.bashrc.d `shell hooks`_
-  - Persistent environment variables (see $HOME/.bashrc.d/penv)::
-
-       penv-set pydoc /usr/share/doc/python2.7/html
-       exit
-       # later...
-       cd $pydoc
-
-- **Automatic time synchronization with NTP**
-
-- Take a look at some `screenshots`_.
 
 Credentials *(passwords set at first boot)*
 -------------------------------------------
 
 -  Webmin, SSH, Shellinabox: username **root**
+-  Adminer: username **adminer**
+-  Pi-hole: username **pihole**
 
+
+.. _Pi-hole: https://pi-hole.net
+.. _Pi-hole documentation: https://docs.pi-hole.net
+.. _Adminer: https://www.adminer.org
+.. _TurnKey Core: https://www.turnkeylinux.org/core
 .. _free software: https://www.turnkeylinux.org/license
 .. _full source code: https://github.com/turnkeylinux-apps
 .. _powerful build system: https://www.turnkeylinux.org/tkldev
