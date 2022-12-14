@@ -4,4 +4,4 @@
 . /etc/default/inithooks
 
 [ -e $INITHOOKS_CONF ] && . $INITHOOKS_CONF
-$INITHOOKS_PATH/bin/pihole.py
+$INITHOOKS_PATH/bin/pihole.py --pass="$APP_PASS"
