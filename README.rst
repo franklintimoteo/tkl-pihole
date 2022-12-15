@@ -8,25 +8,16 @@ This appliance includes all the standard features in `TurnKey Core`_,
 and on top of that:
 
 - Pi-hole:
-    - **Easy-to-install**: our dialogs walk you through the simple
-    installation process in less than ten minutes
-    - **Resolute**: content is blocked in _non-browser locations_,
-    such as ad-laden mobile apps and smart TVs
-    - **Responsive**: seamlessly speeds up the feel of everyday browsing
-    by caching DNS queries
-    - **Lightweight**: runs smoothly with [minimal hardware and software
-    requirements](https://docs.pi-hole.net/main/prerequisites/)
-    - **Robust**: a command-line interface that is quality assured for
-    interoperability
-    - **Insightful**: a beautiful responsive Web Interface dashboard to view
-    and control your Pi-hole
-    - **Versatile**: can optionally function as a [DHCP server](https://discourse.pi-hole.net/t/how-do-i-use-pi-holes-built-in-dhcp-server-and-why-would-i-want-to/3026),
-    ensuring _all_ your devices are protected automatically
-    - **Scalable**: [capable of handling hundreds of millions of queries](https://pi-hole.net/2017/05/24/how-much-traffic-can-pi-hole-handle/)
-    when installed on server-grade hardware
+    - **Easy-to-install**: our dialogs walk you through the simple installation process in less than ten minutes
+    - **Resolute**: content is blocked in *non-browser locations*, such as ad-laden mobile apps and smart TVs
+    - **Responsive**: seamlessly speeds up the feel of everyday browsing by caching DNS queries
+    - **Lightweight**: runs smoothly with `minimal hardware and software requirements`_
+    - **Robust**: a command-line interface that is quality assured for interoperability
+    - **Insightful**: a beautiful responsive Web Interface dashboard to view and control your Pi-hole
+    - **Versatile**: can optionally function as a `DHCP server`_, ensuring *all* your devices are protected automatically
+    - **Scalable**: `capable of handling hundreds of millions of queries`_ when installed on server-grade hardware
     - **Modern**: blocks ads over both IPv4 and IPv6
-    - **Free**: open source software that helps ensure _you_ are the sole
-    person in control of your privacy
+    - **Free**: open source software that helps ensure *you* are the sole person in control of your privacy
 
 
 Credentials *(passwords set at first boot)*
@@ -60,3 +51,6 @@ Credentials *(passwords set at first boot)*
 .. _Webmin: https://webmin.com/
 .. _inithooks: https://github.com/turnkeylinux/inithooks
 .. _shell hooks: https://www.turnkeylinux.org/blog/generic-shell-hooks
+.. _minimal hardware and software requirements: https://docs.pi-hole.net/main/prerequisites/
+.. _DHCP server: https://discourse.pi-hole.net/t/how-do-i-use-pi-holes-built-in-dhcp-server-and-why-would-i-want-to/3026
+.. _capable of handling hundreds of millions of queries: https://pi-hole.net/2017/05/24/how-much-traffic-can-pi-hole-handle/
